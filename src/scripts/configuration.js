@@ -1,6 +1,6 @@
 var Configuration = {
   default: Object.freeze({
-    hotkeys: [
+    Hotkeys: [
       {
         key: 'd',
         module: 'DirectMessages',

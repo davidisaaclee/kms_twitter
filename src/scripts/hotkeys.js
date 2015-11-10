@@ -1,7 +1,8 @@
 var Mousetrap = require('mousetrap');
 var Modules = require('./modules/modules');
 
-var Hotkeys = {
+
+var Hotkeys = Modules.create('Hotkeys', {
   /*
   Registers all hotkey listeners.
 
@@ -18,7 +19,6 @@ var Hotkeys = {
     });
   },
 
-
   /*
   Registers a single hotkey.
 
@@ -29,7 +29,7 @@ var Hotkeys = {
     dictionary.
   */
   addHotkey: function (key, moduleKey, actionKey) {
-    var module = Modules[moduleKey];
+    var module = Modules.get(moduleKey);
     if (module != null) {
       var action = module.actions[actionKey];
       if (action != null) {
@@ -43,6 +43,24 @@ var Hotkeys = {
                     moduleKey);
     }
   }
-};
+});
+
+// var Hotkeys = {
+
+//   Registers all hotkey listeners.
+
+//   hotkeys: [{ key, module, action }]
+//     key: String - The "hot", key (or more - see https://craig.is/killing/mice)
+//     module: String - The module key, as listed in the `modules` dictionary
+//       above.
+//     action: String - The key of the function in the module's `actions`
+//       dictionary.
+
+//   start: function (hotkeys) {
+//     hotkeys.forEach(function (elm) {
+//       Hotkeys.addHotkey(elm.key, elm.module, elm.action);
+//     });
+//   },
+// };
 
 module.exports = Hotkeys;
