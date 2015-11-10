@@ -11,10 +11,6 @@ var Application = {
       return acc;
     }, {});
 
-    // var routes = _.extend({
-    //   'hotkeys': Hotkeys.start
-    // }, moduleRoutes);
-
     var routes = moduleRoutes;
 
     return routeObject(configuration, routes);

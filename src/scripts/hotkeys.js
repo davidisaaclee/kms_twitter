@@ -45,22 +45,4 @@ var Hotkeys = Modules.create('Hotkeys', {
   }
 });
 
-// var Hotkeys = {
-
-//   Registers all hotkey listeners.
-
-//   hotkeys: [{ key, module, action }]
-//     key: String - The "hot", key (or more - see https://craig.is/killing/mice)
-//     module: String - The module key, as listed in the `modules` dictionary
-//       above.
-//     action: String - The key of the function in the module's `actions`
-//       dictionary.
-
-//   start: function (hotkeys) {
-//     hotkeys.forEach(function (elm) {
-//       Hotkeys.addHotkey(elm.key, elm.module, elm.action);
-//     });
-//   },
-// };
-
 module.exports = Hotkeys;
